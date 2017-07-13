@@ -1,0 +1,17 @@
+这个项目是dingo/api练习  跟着这个网址做你就会了：https://www.mengdodo.com/?p=7407
+
+文档：这里将会用dingo api和json web token来开发后台API
+（1）dingo api文档，https://github.com/dingo/api/wiki
+（2）jwt-auth文档，https://github.com/tymondesigns/jwt-auth/wiki  （用户认证）
+
+ 如果低版本框架可以直接使用composer require "dingo/api";
+//目前低版本的dingo/api不能支持laravel5.4，使用dev版本的dingo/api ,
+所以5.4版本要用：composer require "dingo/api:dev-master"
+composer require tymon/jwt-auth
+
+在config下控制 添加api.php和jwt.php
+php artisan vendor:publish --provider="Dingo\Api\Provider\LaravelServiceProvider"
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\JWTAuthServiceProvider"
+
+查看是否成功
+php artisan api:routes
